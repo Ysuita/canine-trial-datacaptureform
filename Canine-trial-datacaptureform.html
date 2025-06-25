@@ -1,0 +1,460 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Canine Oncology Trial Data Capture Form</title>\
+    <!-- Tailwind CSS CDN -->\
+    <script src="https://cdn.tailwindcss.com"></script>\
+    <style>\
+        /* Custom font for Inter */\
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');\
+        body \{\
+            font-family: 'Inter', sans-serif;\
+            background-color: #f3f4f6; /* Light gray background */\
+        \}\
+        /* Custom styles for focus and rounded corners */\
+        .form-input \{\
+            @apply appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;\
+        \}\
+        .form-select \{\
+            @apply appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;\
+        \}\
+        .btn-primary \{\
+            @apply w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out;\
+        \}\
+        .card \{\
+            @apply bg-white p-8 rounded-lg shadow-xl;\
+        \}\
+        .section-title \{\
+            @apply text-2xl font-semibold text-gray-800 mb-6 pb-2 border-b border-gray-200;\
+        \}\
+        .sub-section-title \{\
+            @apply text-xl font-medium text-gray-700 mt-6 mb-4;\
+        \}\
+    </style>\
+</head>\
+<body class="min-h-screen flex items-center justify-center p-4">\
+    <div class="max-w-5xl w-full mx-auto card">\
+        <h2 class="text-4xl font-bold text-center text-gray-900 mb-10">Canine Oncology Trial Data Capture</h2>\
+\
+        <form class="space-y-10">\
+            <!-- Study & Canine Subject Information Section -->\
+            <div class="space-y-6">\
+                <h3 class="section-title">Study & Canine Subject Information</h3>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div>\
+                        <label for="study-id" class="block text-sm font-medium text-gray-700 mb-1">Study ID / Protocol ID</label>\
+                        <input type="text" id="study-id" name="study-id" class="form-input" placeholder="e.g., ONC-TCE-001">\
+                    </div>\
+                    <div>\
+                        <label for="canine-subject-id" class="block text-sm font-medium text-gray-700 mb-1">Canine Subject ID</label>\
+                        <input type="text" id="canine-subject-id" name="canine-subject-id" class="form-input" placeholder="e.g., Dog-001">\
+                    </div>\
+                    <div>\
+                        <label for="study-initiation-date" class="block text-sm font-medium text-gray-700 mb-1">Study Initiation Date (Day 0)</label>\
+                        <input type="date" id="study-initiation-date" name="study-initiation-date" class="form-input">\
+                    </div>\
+                    <div class="md:col-span-2 lg:col-span-3">\
+                        <label for="vet-surgeon-name" class="block text-sm font-medium text-gray-700 mb-1">Veterinary Surgeon Name</label>\
+                        <input type="text" id="vet-surgeon-name" name="vet-surgeon-name" class="form-input" placeholder="e.g., Dr. Emma Watson, DVM">\
+                    </div>\
+                    <div class="md:col-span-2 lg:col-span-3">\
+                        <label for="dog-breed" class="block text-sm font-medium text-gray-700 mb-1">Dog Breed</label>\
+                        <input type="text" id="dog-breed" name="dog-breed" class="form-input" placeholder="e.g., Labrador Retriever">\
+                    </div>\
+                    <div>\
+                        <label for="dog-sex" class="block text-sm font-medium text-gray-700 mb-1">Dog Sex</label>\
+                        <select id="dog-sex" name="dog-sex" class="form-select">\
+                            <option value="">Select Sex</option>\
+                            <option value="male">Male</option>\
+                            <option value="female">Female</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="dog-age" class="block text-sm font-medium text-gray-700 mb-1">Dog Age (Years)</label>\
+                        <input type="number" id="dog-age" name="dog-age" class="form-input" placeholder="e.g., 5">\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- Day 1: Pre-Dose & Injection Details Section -->\
+            <div class="space-y-6">\
+                <h3 class="section-title">Day 1: Pre-Dose & Injection Details</h3>\
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+                    <div>\
+                        <label for="day1-date" class="block text-sm font-medium text-gray-700 mb-1">Date (Day 1)</label>\
+                        <input type="date" id="day1-date" name="day1-date" class="form-input">\
+                    </div>\
+                    <div>\
+                        <label for="day1-body-weight" class="block text-sm font-medium text-gray-700 mb-1">Body Weight (kg)</label>\
+                        <input type="number" step="0.1" id="day1-body-weight" name="day1-body-weight" class="form-input" placeholder="e.g., 25.5">\
+                    </div>\
+                </div>\
+\
+                <h4 class="sub-section-title">Day 1 Vital Check (Pre-Injection)</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">\
+                    <div>\
+                        <label for="day1-temp" class="block text-sm font-medium text-gray-700 mb-1">Temperature (\'b0C)</label>\
+                        <input type="number" step="0.1" id="day1-temp" name="day1-temp" class="form-input" placeholder="e.g., 38.5">\
+                    </div>\
+                    <div>\
+                        <label for="day1-hr" class="block text-sm font-medium text-gray-700 mb-1">Heart Rate (bpm)</label>\
+                        <input type="number" id="day1-hr" name="day1-hr" class="form-input" placeholder="e.g., 80">\
+                    </div>\
+                    <div>\
+                        <label for="day1-rr" class="block text-sm font-medium text-gray-700 mb-1">Respiratory Rate (breaths/min)</label>\
+                        <input type="number" id="day1-rr" name="day1-rr" class="form-input" placeholder="e.g., 20">\
+                    </div>\
+                    <div class="md:col-span-2 lg:col-span-1">\
+                        <label for="day1-clinical-obs" class="block text-sm font-medium text-gray-700 mb-1">Clinical Observations</label>\
+                        <textarea id="day1-clinical-obs" name="day1-clinical-obs" rows="2" class="form-input" placeholder="e.g., Alert, responsive, no visible discomfort."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- Injection Site 1: TCE A in Hydrogel -->\
+                <h4 class="sub-section-title">Injection Site 1: TCE A in Hydrogel</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div>\
+                        <label for="site1-location" class="block text-sm font-medium text-gray-700 mb-1">Location</label>\
+                        <input type="text" id="site1-location" name="site1-location" class="form-input" placeholder="e.g., Right hind limb STS">\
+                    </div>\
+                    <div>\
+                        <label for="site1-product" class="block text-sm font-medium text-gray-700 mb-1">Product</label>\
+                        <input type="text" id="site1-product" name="site1-product" class="form-input" value="TCE A in Hydrogel" readonly>\
+                    </div>\
+                    <div>\
+                        <label for="site1-bead-color" class="block text-sm font-medium text-gray-700 mb-1">Fluorescent Bead Color</label>\
+                        <select id="site1-bead-color" name="site1-bead-color" class="form-select">\
+                            <option value="">Select Color</option>\
+                            <option value="pink">Pink</option>\
+                            <option value="yellow">Yellow</option>\
+                            <option value="orange">Orange</option>\
+                            <option value="other">Other</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="site1-dose" class="block text-sm font-medium text-gray-700 mb-1">TCE Dose (mg/kg)</label>\
+                        <input type="number" step="0.01" id="site1-dose" name="site1-dose" class="form-input" placeholder="e.g., 0.1">\
+                    </div>\
+                    <div>\
+                        <label for="site1-volume" class="block text-sm font-medium text-gray-700 mb-1">Volume Injected (mL)</label>\
+                        <input type="number" step="0.01" id="site1-volume" name="site1-volume" class="form-input" placeholder="e.g., 0.5">\
+                    </div>\
+                    <div>\
+                        <label for="site1-sts-pre-size" class="block text-sm font-medium text-gray-700 mb-1">STS Pre-Injection Size (mm, L x W x H)</label>\
+                        <input type="text" id="site1-sts-pre-size" name="site1-sts-pre-size" class="form-input" placeholder="e.g., 20x15x10">\
+                    </div>\
+                    <div class="lg:col-span-3">\
+                        <label for="site1-notes" class="block text-sm font-medium text-gray-700 mb-1">Notes for Site 1</label>\
+                        <textarea id="site1-notes" name="site1-notes" rows="2" class="form-input" placeholder="e.g., Injection performed smoothly."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- Injection Site 2: TCE B in Hydrogel -->\
+                <h4 class="sub-section-title">Injection Site 2: TCE B in Hydrogel</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div>\
+                        <label for="site2-location" class="block text-sm font-medium text-gray-700 mb-1">Location</label>\
+                        <input type="text" id="site2-location" name="site2-location" class="form-input" placeholder="e.g., Left shoulder STS">\
+                    </div>\
+                    <div>\
+                        <label for="site2-product" class="block text-sm font-medium text-gray-700 mb-1">Product</label>\
+                        <input type="text" id="site2-product" name="site2-product" class="form-input" value="TCE B in Hydrogel" readonly>\
+                    </div>\
+                    <div>\
+                        <label for="site2-bead-color" class="block text-sm font-medium text-gray-700 mb-1">Fluorescent Bead Color</label>\
+                        <select id="site2-bead-color" name="site2-bead-color" class="form-select">\
+                            <option value="">Select Color</option>\
+                            <option value="pink">Pink</option>\
+                            <option value="yellow">Yellow</option>\
+                            <option value="orange">Orange</option>\
+                            <option value="other">Other</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="site2-dose" class="block text-sm font-medium text-gray-700 mb-1">TCE Dose (mg/kg)</label>\
+                        <input type="number" step="0.01" id="site2-dose" name="site2-dose" class="form-input" placeholder="e.g., 0.1">\
+                    </div>\
+                    <div>\
+                        <label for="site2-volume" class="block text-sm font-medium text-gray-700 mb-1">Volume Injected (mL)</label>\
+                        <input type="number" step="0.01" id="site2-volume" name="site2-volume" class="form-input" placeholder="e.g., 0.5">\
+                    </div>\
+                    <div>\
+                        <label for="site2-sts-pre-size" class="block text-sm font-medium text-gray-700 mb-1">STS Pre-Injection Size (mm, L x W x H)</label>\
+                        <input type="text" id="site2-sts-pre-size" name="site2-sts-pre-size" class="form-input" placeholder="e.g., 18x12x8">\
+                    </div>\
+                    <div class="lg:col-span-3">\
+                        <label for="site2-notes" class="block text-sm font-medium text-gray-700 mb-1">Notes for Site 2</label>\
+                        <textarea id="site2-notes" name="site2-notes" rows="2" class="form-input" placeholder="e.g., No issues during administration."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- Injection Site 3: Hydrogel Only (Control) -->\
+                <h4 class="sub-section-title">Injection Site 3: Hydrogel Only (Control)</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div>\
+                        <label for="site3-location" class="block text-sm font-medium text-gray-700 mb-1">Location</label>\
+                        <input type="text" id="site3-location" name="site3-location" class="form-input" placeholder="e.g., Dorsal mid-back">\
+                    </div>\
+                    <div>\
+                        <label for="site3-product" class="block text-sm font-medium text-gray-700 mb-1">Product</label>\
+                        <input type="text" id="site3-product" name="site3-product" class="form-input" value="Hydrogel Only (Control)" readonly>\
+                    </div>\
+                    <div>\
+                        <label for="site3-bead-color" class="block text-sm font-medium text-gray-700 mb-1">Fluorescent Bead Color</label>\
+                        <select id="site3-bead-color" name="site3-bead-color" class="form-select">\
+                            <option value="">Select Color</option>\
+                            <option value="pink">Pink</option>\
+                            <option value="yellow">Yellow</option>\
+                            <option value="orange">Orange</option>\
+                            <option value="other">Other</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="site3-dose" class="block text-sm font-medium text-gray-700 mb-1">TCE Dose (mg/kg)</label>\
+                        <input type="text" id="site3-dose" name="site3-dose" class="form-input" value="N/A" readonly>\
+                    </div>\
+                    <div>\
+                        <label for="site3-volume" class="block text-sm font-medium text-gray-700 mb-1">Volume Injected (mL)</label>\
+                        <input type="number" step="0.01" id="site3-volume" name="site3-volume" class="form-input" placeholder="e.g., 0.5">\
+                    </div>\
+                    <div>\
+                        <label for="site3-sts-pre-size" class="block text-sm font-medium text-gray-700 mb-1">STS Pre-Injection Size (mm, L x W x H)</label>\
+                        <input type="text" id="site3-sts-pre-size" name="site3-sts-pre-size" class="form-input" placeholder="e.g., 22x16x11">\
+                    </div>\
+                    <div class="lg:col-span-3">\
+                        <label for="site3-notes" class="block text-sm font-medium text-gray-700 mb-1">Notes for Site 3</label>\
+                        <textarea id="site3-notes" name="site3-notes" rows="2" class="form-input" placeholder="e.g., Control hydrogel injected."></textarea>\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- Day 2: Post-Dose Monitoring & Blood Harvest Section -->\
+            <div class="space-y-6">\
+                <h3 class="section-title">Day 2: Post-Dose Monitoring & Blood Harvest</h3>\
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+                    <div>\
+                        <label for="day2-date" class="block text-sm font-medium text-gray-700 mb-1">Date (Day 2)</label>\
+                        <input type="date" id="day2-date" name="day2-date" class="form-input">\
+                    </div>\
+                    <div>\
+                        <label for="day2-body-weight" class="block text-sm font-medium text-gray-700 mb-1">Body Weight (kg)</label>\
+                        <input type="number" step="0.1" id="day2-body-weight" name="day2-body-weight" class="form-input" placeholder="e.g., 25.0">\
+                    </div>\
+                </div>\
+\
+                <h4 class="sub-section-title">Day 2 Vital Check</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">\
+                    <div>\
+                        <label for="day2-temp" class="block text-sm font-medium text-gray-700 mb-1">Temperature (\'b0C)</label>\
+                        <input type="number" step="0.1" id="day2-temp" name="day2-temp" class="form-input" placeholder="e.g., 38.2">\
+                    </div>\
+                    <div>\
+                        <label for="day2-hr" class="block text-sm font-medium text-gray-700 mb-1">Heart Rate (bpm)</label>\
+                        <input type="number" id="day2-hr" name="day2-hr" class="form-input" placeholder="e.g., 78">\
+                    </div>\
+                    <div>\
+                        <label for="day2-rr" class="block text-sm font-medium text-gray-700 mb-1">Respiratory Rate (breaths/min)</label>\
+                        <input type="number" id="day2-rr" name="day2-rr" class="form-input" placeholder="e.g., 19">\
+                    </div>\
+                    <div class="md:col-span-2 lg:col-span-1">\
+                        <label for="day2-clinical-obs" class="block text-sm font-medium text-gray-700 mb-1">Clinical Observations</label>\
+                        <textarea id="day2-clinical-obs" name="day2-clinical-obs" rows="2" class="form-input" placeholder="e.g., Slight swelling at injection sites, otherwise normal."></textarea>\
+                    </div>\
+                </div>\
+\
+                <h4 class="sub-section-title">Day 2 Blood Harvest for Cytokine Analysis</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+                    <div>\
+                        <label for="day2-blood-sample-id" class="block text-sm font-medium text-gray-700 mb-1">Blood Sample ID</label>\
+                        <input type="text" id="day2-blood-sample-id" name="day2-blood-sample-id" class="form-input" placeholder="e.g., Dog001-Blood-D2">\
+                    </div>\
+                    <div>\
+                        <label for="day2-blood-harvest-time" class="block text-sm font-medium text-gray-700 mb-1">Time of Blood Harvest</label>\
+                        <input type="time" id="day2-blood-harvest-time" name="day2-blood-harvest-time" class="form-input">\
+                    </div>\
+                    <div class="md:col-span-2">\
+                        <label for="day2-blood-notes" class="block text-sm font-medium text-gray-700 mb-1">Notes on Blood Draw</label>\
+                        <textarea id="day2-blood-notes" name="day2-blood-notes" rows="2" class="form-input" placeholder="e.g., No complications during draw."></textarea>\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- Day 7: Endpoint Monitoring, Blood & Tissue Harvest Section -->\
+            <div class="space-y-6">\
+                <h3 class="section-title">Day 7: Endpoint Monitoring, Blood & Tissue Harvest</h3>\
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+                    <div>\
+                        <label for="day7-date" class="block text-sm font-medium text-gray-700 mb-1">Date (Day 7)</label>\
+                        <input type="date" id="day7-date" name="day7-date" class="form-input">\
+                    </div>\
+                </div>\
+\
+                <h4 class="sub-section-title">Day 7 Vital Check</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">\
+                    <div>\
+                        <label for="day7-temp" class="block text-sm font-medium text-gray-700 mb-1">Temperature (\'b0C)</label>\
+                        <input type="number" step="0.1" id="day7-temp" name="day7-temp" class="form-input" placeholder="e.g., 38.0">\
+                    </div>\
+                    <div>\
+                        <label for="day7-hr" class="block text-sm font-medium text-gray-700 mb-1">Heart Rate (bpm)</label>\
+                        <input type="number" id="day7-hr" name="day7-hr" class="form-input" placeholder="e.g., 75">\
+                    </div>\
+                    <div>\
+                        <label for="day7-rr" class="block text-sm font-medium text-gray-700 mb-1">Respiratory Rate (breaths/min)</label>\
+                        <input type="number" id="day7-rr" name="day7-rr" class="form-input" placeholder="e.g., 18">\
+                    </div>\
+                    <div class="md:col-span-2 lg:col-span-1">\
+                        <label for="day7-clinical-obs" class="block text-sm font-medium text-gray-700 mb-1">Clinical Observations</label>\
+                        <textarea id="day7-clinical-obs" name="day7-clinical-obs" rows="2" class="form-input" placeholder="e.g., Incision sites healing well, no signs of infection."></textarea>\
+                    </div>\
+                </div>\
+\
+                <h4 class="sub-section-title">Day 7 Blood Harvest for Cytokine Analysis</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+                    <div>\
+                        <label for="day7-blood-sample-id" class="block text-sm font-medium text-gray-700 mb-1">Blood Sample ID</label>\
+                        <input type="text" id="day7-blood-sample-id" name="day7-blood-sample-id" class="form-input" placeholder="e.g., Dog001-Blood-D7">\
+                    </div>\
+                    <div>\
+                        <label for="day7-blood-harvest-time" class="block text-sm font-medium text-gray-700 mb-1">Time of Blood Harvest</label>\
+                        <input type="time" id="day7-blood-harvest-time" name="day7-blood-harvest-time" class="form-input">\
+                    </div>\
+                    <div class="md:col-span-2">\
+                        <label for="day7-blood-notes" class="block text-sm font-medium text-gray-700 mb-1">Notes on Blood Draw</label>\
+                        <textarea id="day7-blood-notes" name="day7-blood-notes" rows="2" class="form-input" placeholder="e.g., Sample obtained successfully."></textarea>\
+                    </div>\
+                </div>\
+\
+                <h4 class="sub-section-title">Day 7 Soft Tissue Sarcoma (STS) Harvest & Excision Details</h4>\
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">\
+                    <div>\
+                        <label for="sts-harvest-time" class="block text-sm font-medium text-gray-700 mb-1">Time of STS Harvest</label>\
+                        <input type="time" id="sts-harvest-time" name="sts-harvest-time" class="form-input">\
+                    </div>\
+                    <div class="md:col-span-2">\
+                        <label for="sts-gross-obs" class="block text-sm font-medium text-gray-700 mb-1">Gross Observations of Harvested STS</label>\
+                        <textarea id="sts-gross-obs" name="sts-gross-obs" rows="3" class="form-input" placeholder="e.g., Tumor appears well-encapsulated, reduced in size."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- Tissue Piece 1 for IHC -->\
+                <h5 class="sub-section-title text-base">Tissue Piece 1 (for IHC)</h5>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div>\
+                        <label for="piece1-associated-treatment" class="block text-sm font-medium text-gray-700 mb-1">Associated Treatment</label>\
+                        <select id="piece1-associated-treatment" name="piece1-associated-treatment" class="form-select">\
+                            <option value="">Select Treatment</option>\
+                            <option value="tce-a">TCE A in Hydrogel</option>\
+                            <option value="tce-b">TCE B in Hydrogel</option>\
+                            <option value="hydrogel-only">Hydrogel Only</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="piece1-bead-color-obs" class="block text-sm font-medium text-gray-700 mb-1">Fluorescent Bead Color Observed</label>\
+                        <select id="piece1-bead-color-obs" name="piece1-bead-color-obs" class="form-select">\
+                            <option value="">Select Color</option>\
+                            <option value="pink">Pink</option>\
+                            <option value="yellow">Yellow</option>\
+                            <option value="orange">Orange</option>\
+                            <option value="not-observed">Not Observed</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="piece1-size" class="block text-sm font-medium text-gray-700 mb-1">Piece Size (mm, L x W x H)</label>\
+                        <input type="text" id="piece1-size" name="piece1-size" class="form-input" placeholder="e.g., 15x10x8">\
+                    </div>\
+                    <div class="lg:col-span-3">\
+                        <label for="piece1-notes-ihc" class="block text-sm font-medium text-gray-700 mb-1">Notes for IHC (Piece 1)</label>\
+                        <textarea id="piece1-notes-ihc" name="piece1-notes-ihc" rows="2" class="form-input" placeholder="e.g., Appears to contain hydrogel residue."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- Tissue Piece 2 for IHC -->\
+                <h5 class="sub-section-title text-base">Tissue Piece 2 (for IHC)</h5>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div>\
+                        <label for="piece2-associated-treatment" class="block text-sm font-medium text-gray-700 mb-1">Associated Treatment</label>\
+                        <select id="piece2-associated-treatment" name="piece2-associated-treatment" class="form-select">\
+                            <option value="">Select Treatment</option>\
+                            <option value="tce-a">TCE A in Hydrogel</option>\
+                            <option value="tce-b">TCE B in Hydrogel</option>\
+                            <option value="hydrogel-only">Hydrogel Only</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="piece2-bead-color-obs" class="block text-sm font-medium text-gray-700 mb-1">Fluorescent Bead Color Observed</label>\
+                        <select id="piece2-bead-color-obs" name="piece2-bead-color-obs" class="form-select">\
+                            <option value="">Select Color</option>\
+                            <option value="pink">Pink</option>\
+                            <option value="yellow">Yellow</option>\
+                            <option value="orange">Orange</option>\
+                            <option value="not-observed">Not Observed</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="piece2-size" class="block text-sm font-medium text-gray-700 mb-1">Piece Size (mm, L x W x H)</label>\
+                        <input type="text" id="piece2-size" name="piece2-size" class="form-input" placeholder="e.g., 16x11x9">\
+                    </div>\
+                    <div class="lg:col-span-3">\
+                        <label for="piece2-notes-ihc" class="block text-sm font-medium text-gray-700 mb-1">Notes for IHC (Piece 2)</label>\
+                        <textarea id="piece2-notes-ihc" name="piece2-notes-ihc" rows="2" class="form-input" placeholder="e.g., Good tumor tissue representation."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- Tissue Piece 3 for IHC -->\
+                <h5 class="sub-section-title text-base">Tissue Piece 3 (for IHC)</h5>\
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">\
+                    <div>\
+                        <label for="piece3-associated-treatment" class="block text-sm font-medium text-gray-700 mb-1">Associated Treatment</label>\
+                        <select id="piece3-associated-treatment" name="piece3-associated-treatment" class="form-select">\
+                            <option value="">Select Treatment</option>\
+                            <option value="tce-a">TCE A in Hydrogel</option>\
+                            <option value="tce-b">TCE B in Hydrogel</option>\
+                            <option value="hydrogel-only">Hydrogel Only</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="piece3-bead-color-obs" class="block text-sm font-medium text-gray-700 mb-1">Fluorescent Bead Color Observed</label>\
+                        <select id="piece3-bead-color-obs" name="piece3-bead-color-obs" class="form-select">\
+                            <option value="">Select Color</option>\
+                            <option value="pink">Pink</option>\
+                            <option value="yellow">Yellow</option>\
+                            <option value="orange">Orange</option>\
+                            <option value="not-observed">Not Observed</option>\
+                        </select>\
+                    </div>\
+                    <div>\
+                        <label for="piece3-size" class="block text-sm font-medium text-gray-700 mb-1">Piece Size (mm, L x W x H)</label>\
+                        <input type="text" id="piece3-size" name="piece3-size" class="form-input" placeholder="e.g., 17x13x10">\
+                    </div>\
+                    <div class="lg:col-span-3">\
+                        <label for="piece3-notes-ihc" class="block text-sm font-medium text-gray-700 mb-1">Notes for IHC (Piece 3)</label>\
+                        <textarea id="piece3-notes-ihc" name="piece3-notes-ihc" rows="2" class="form-input" placeholder="e.g., Control piece, good morphology."></textarea>\
+                    </div>\
+                </div>\
+                <div class="md:col-span-2">\
+                    <label for="tissue-storage" class="block text-sm font-medium text-gray-700 mb-1">Tissue Storage/Processing Details</label>\
+                    <textarea id="tissue-storage" name="tissue-storage" rows="2" class="form-input" placeholder="e.g., Stored in 10% neutral buffered formalin for 24h, then transferred to 70% ethanol."></textarea>\
+                </div>\
+            </div>\
+\
+            <!-- Submit Button -->\
+            <div class="pt-5">\
+                <button type="submit" class="btn-primary">\
+                    Submit Trial Data\
+                </button>\
+            </div>\
+        </form>\
+    </div>\
+</body>\
+</html>\
+}
